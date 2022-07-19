@@ -90,10 +90,28 @@
             Après avoir consulté la documentation, afficher chat de manière conditionnelle seulement
             si son nom est différent de "Ronron" et qu'il n'est pas nul et avec la notation &&
           </p>
+          <h1>AFFICHAGE CHAT</h1>
+          {chat !== 'Ronron' && <h2> {chat}</h2>}
+
           <p>
             Afficher les propriétés de chaque personne à l'aide de map
             Pour chaque personne afficher son âge de manière conditionnelle en utilisant ? et :
           </p>
+
+          <h1>AFFICHAGE DES PROPRIETES DE PERSONNE</h1>
+          {
+            personnes.map((personne, index) => (
+              <div>
+                <p>{personne.name}</p>
+                <p>{personne.age}</p>
+                <div>
+                  <p>{personne.job.name}</p>
+                  <p>{personne.job.since}</p>
+                </div>
+              </div>
+            ))
+          }          
+
           <p>
             Afficher les propriétés de chaque personne à l'aide de map
             Pour chaque personne afficher son âge de manière conditionnelle en utilisant ||

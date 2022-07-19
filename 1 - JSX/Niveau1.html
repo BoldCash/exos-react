@@ -24,7 +24,7 @@
 
   // Création de composant en créant des classes
   class Hello extends React.Component {
-
+    
     render() {
       // lecture seule pour les props
       // this.props.message = "Hello React";
@@ -37,11 +37,12 @@
         <div className="heading">
           <h1>{this.props.message}</h1>
           <p>{this.props.subtitle}</p>
+          <p>Bonjour {this.props.nom}</p>
           <div>
               <a href="https://thinkster.io/tutorials/rendering-variables-in-react">Documentation sur le rendu des variables en JSX</a>
-              <p>Afficher ici le contenu de la variable song </p>
-              <p>Afficher ici le contenu de numberOfGoodReasonsToBeHere</p>
-              <p>Afficher ici le contenu de disabledButton</p>
+              <p>Afficher ici le contenu de la variable song {song} </p>
+              <p>Afficher ici le contenu de numberOfGoodReasonsToBeHere {numberOfGoodReasonsToBeHere}</p>
+              <p>Afficher ici le contenu de disabledButton {disabledButton}</p>
           </div>
         </div>
       )
@@ -50,7 +51,7 @@
 
   // Rendu dans le DOM
   ReactDOM.render(
-    <Hello message="Hello React" subtitle="Enjoy ! "/>,
+    <Hello nom="Youssouf" message="Hello React" subtitle="Enjoy ! "/>,
     document.getElementById('root')
   );
 </script>

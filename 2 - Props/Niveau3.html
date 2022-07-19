@@ -43,6 +43,14 @@
     }
   }
 
+  class Legume extends React.Component {
+    render(){
+      return (
+      <p>{this.props.article.name} - {this.props.article.prix}</p>
+      )
+    }
+  }
+
   class TitleComponent extends React.Component {
     render() {
       return (
@@ -50,6 +58,23 @@
       )
     }
   }
+
+  class PanierLegumes extends React.Component{
+    render(){
+      const legumes = this.props.listeLgms    
+      console.log(legumes)  
+      return(
+
+        
+        <div>
+          {legumes.map((lgm, index) => (<Legume key={index} article={lgm}/>))}
+          {legumes.map(lgm => <h1>{lgm.name} - {lgm.prix}</h1>)}
+        </div> 
+          
+      )
+    }
+  }
+
 
   // Création de composant en créant des classes
   class Hello extends React.Component {
@@ -63,6 +88,7 @@
         <div>
           <TitleComponent/>
           <Consigne/>
+          <PanierLegumes listeLgms={legumes} />
         </div>
       );
 

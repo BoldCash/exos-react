@@ -35,7 +35,7 @@
               </p>
               <p>Depuis la classe Hello, appeler ce nouveau composant en vous inspirant des exemples</p>
               <p>Créer un nouveau composant TextField qui contiendra un input de type texte et un label de vos choix.</p>
-              <p>Générer ce nouveau composant TextField depuis la classe Home deux fois.</p>
+              <p>Générer ce nouveau composant TextField depuis la classe Hello deux fois.</p>
           </div>
         )
       }
@@ -49,14 +49,35 @@
     }
   }
 
+  class PrimaryButton extends React.Component {
+    render(){
+      return (
+        <button>Clique moi</button>
+      )
+    }
+  }
+
+  class TextField extends React.Component {
+    render(){
+      return(
+        <div>
+          <label for="name">{this.props.texte}:</label>
+          <input type="text" name="input" value=""/>
+        </div>
+      )
+    }
+  }
+
   // Création de composant en créant des classes
   class Hello extends React.Component {
-
     render() {
       return (
         <div>
           <TitleComponent/>
           <Consigne/>
+          <PrimaryButton/>
+          <TextField texte="Nom"/>
+          <TextField texte="Prenom"/>
         </div>
       )
     }

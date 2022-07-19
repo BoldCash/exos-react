@@ -30,6 +30,7 @@
       // this.props.message = "Hello React";
 
       const notes = [0, 4, 10, 20, 15];
+      const textButtons = ["Annuler","Supprimer","Valider"];
       const personne = {
         firstname: "Boulette",
         lastname: "Fromage",
@@ -52,8 +53,27 @@
                 Afficher le contenu du tableau notes sous forme de liste
                 <a href="https://fr.reactjs.org/docs/lists-and-keys.html">Documentation sur l'affichage des listes</a>
               </p>
+
+              <ul>
+                {notes.map(note => <li>{note}</li>)}  
+              </ul>
+
+              {textButtons.map(btn => <button>{btn}</button>)}
+
+              <div>
+                {textButtons.map(montbn => <button>{montbn}</button>)} 
+              </div>
+
               <p>Afficher le contenu de la constante personne sous la forme personne.valeur</p>
+              <div>
+                <p>Firstname : {personne.firstname}</p>
+                <p>Lastname  : {personne.lastname}</p>
+                <p>Age       : {personne.age}</p>
+              </div>
+              
               <p>Afficher le contenu de la constante actionsList</p>
+              {actionsList}
+              
           </div>
         </div>
       )
@@ -62,7 +82,7 @@
 
   // Rendu dans le DOM
   ReactDOM.render(
-    <Hello message="Hello React" subtitle="Enjoy ! "/>,
+    <Hello message="Bonjour React" subtitle="Enjoy ! "/>,
     document.getElementById('root')
   );
 </script>
